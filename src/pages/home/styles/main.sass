@@ -1,0 +1,51 @@
+$search-bar-size: 35px
+$search-bar-width: 500px
+    
+.search-center
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+
+.search-container
+    max-width: $search-bar-width
+
+.search-text
+    border-bottom-left-radius: $search-bar-size / 2
+    border-top-left-radius: $search-bar-size / 2
+    padding: 0 $search-bar-size * 0.5
+    height: $search-bar-size
+    background-color: white
+    position: absolute
+    border: none
+    width: 400px
+    width: 81%
+
+.search-bar
+    width: $search-bar-width
+    position: relative
+    display: block
+
+.search-title
+    width: $search-bar-width
+    display: block
+    text-align: center
+    padding-bottom: 30px
+    font-weight: normal
+
+.search-button
+    color: white
+    border-bottom-right-radius: $search-bar-size / 2
+    border-top-right-radius: $search-bar-size / 2
+    background-color: #ff7f50
+    height: $search-bar-size
+    position: absolute
+    width: 15%
+    margin: 0
+    border: 0
+    right: 0
+    cursor: pointer
+    transition: 0.25s
+
+    &:hover
+        background-color: darken(#ff7f50, 7%)
