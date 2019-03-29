@@ -1,0 +1,35 @@
+$search-bar-size: 35px
+$search-bar-width: 500px
+    
+.search-text
+    border-bottom-left-radius: $search-bar-size / 2
+    border-top-left-radius: $search-bar-size / 2
+    padding: 0 $search-bar-size * 0.5
+    height: $search-bar-size
+    background-color: white
+    position: absolute
+    border: none
+    width: 400px
+    width: 81%
+
+.search-bar
+    width: $search-bar-width
+    position: relative
+    display: block
+
+.search-button
+    color: white
+    border-bottom-right-radius: $search-bar-size / 2
+    border-top-right-radius: $search-bar-size / 2
+    background-color: #ff7f50
+    height: $search-bar-size
+    position: absolute
+    width: 15%
+    margin: 0
+    border: 0
+    right: 0
+    cursor: pointer
+    transition: 0.25s
+
+    &:hover
+        background-color: darken(#ff7f50, 7%)
