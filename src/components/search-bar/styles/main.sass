@@ -16,6 +16,7 @@ $search-bar-width: 500px
     width: $search-bar-width
     position: relative
     display: block
+    margin-top: -$search-bar-size
 
 .search-button
     color: white
@@ -33,3 +34,7 @@ $search-bar-width: 500px
 
     &:hover
         background-color: darken(#ff7f50, 7%)
+
+    &:disabled
+        background-color: lighten(#ff7f50, 7%)
+        cursor: not-allowed

@@ -21,7 +21,7 @@ class SearchBar extends Component {
     }
 
     search(e) {
-        if (e.keyCode === 13 && this.state.query) {
+        if ((e.keyCode === 13 && this.state.query) || e.target.id === "search-button") {
             const { history } = this.props;
             history.replace("/search?q=" + this.state.query);
         }
@@ -30,8 +30,17 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar">
-                <input className="search-text" type="text" onChange={this.updateQuery} onKeyDown={this.search} value={this.state.query}/>
-                <button disabled={!this.state.query} className="search-button">Search</button>
+                <input 
+                    className="search-text" 
+                    type="text"
+                    onChange={this.updateQuery}
+                    onKeyDown={this.search} 
+                    value={this.state.query}
+                />
+                <button id="search-button" 
+                    disabled={!this.state.query} 
+                    onClick={this.search}
+                    className="search-button">Search</button>
             </div>
         );
     }

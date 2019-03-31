@@ -14,6 +14,7 @@
   width: 500px;
   position: relative;
   display: block;
+  margin-top: -35px;
 }
 
 .search-button {
@@ -34,5 +35,10 @@
 
 .search-button:hover {
   background-color: #ff652c;
+}
+
+.search-button:disabled {
+  background-color: #ff9974;
+  cursor: not-allowed;
 }
 /*# sourceMappingURL=main.css.map */

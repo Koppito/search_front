@@ -8,7 +8,7 @@ import NotFound from "./pages/not_found";
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router forceRefresh={true}>
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <Route path="/search" component={Search}></Route>

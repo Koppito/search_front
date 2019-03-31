@@ -26,6 +26,7 @@ class NotFound extends Component {
                             style={{
                                 width: 300,
                             }}
+                            alt="meme"
                         />
                     </div>
                 </div>
