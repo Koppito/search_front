@@ -4,7 +4,7 @@ class NotFound extends Component {
     render() {
         return (
             <div>
-                Donde vas wachin
+                No encontramos la pagina :(
             </div>
         );
     }

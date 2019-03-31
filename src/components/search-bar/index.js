@@ -30,7 +30,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar">
-                <input className="search-text" type="text" onChange={this.updateQuery} onKeyDown={this.search}></input>
+                <input className="search-text" type="text" onChange={this.updateQuery} onKeyDown={this.search} value={this.state.query}/>
                 <button disabled={!this.state.query} className="search-button">Search</button>
             </div>
         );

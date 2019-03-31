@@ -10,7 +10,7 @@ class Home extends Component {
                     <div className="search-title">
                         <h1>yet another <span style={{ color: "#ff7f50", fontWeight: "bold"}}>Search Engine</span></h1>
                     </div>
-                    <SearchBar />
+                    <SearchBar query=""/>
                 </div>
             </div>
         );
