@@ -1,17 +1,30 @@
 import React, {Component} from "react";
 import SearchBar from "../../components/search-bar";
+import DocumentList from "../../components/document-list";
+import LoadingIcon from "../../components/loading-icon";
 import { Link } from "react-router-dom";
 import "./styles/main.css"
-import { NONAME } from "dns";
+
+// TODO: Change backend url when it's created
+// const searchBackend = "http://localhost:80801/search?q=heyheyhey";
 
 class Search extends Component {
     constructor(props) {
         super(props);
-        const query = new URLSearchParams(props.location.search); 
+        const query = new URLSearchParams(props.location.search).get("q"); 
 
         this.state = {
-            "query": query.get("q"),
+            "query": query,
+            "results": [{}],
+            "loading": true,
         }
+    }
+
+    componentWillMount() {
+        // TODO: Implement backend hit
+        setTimeout(() => {
+            this.setState({ loading: false, });
+        }, 2000);
     }
 
     render() {    
@@ -24,9 +37,7 @@ class Search extends Component {
                     <SearchBar query={this.state.query}/>
                 </div>
                 <div className="content">
-                    <Link to="/document">
-                        {this.state.query}
-                    </Link>
+                    { this.state.loading ? <LoadingIcon /> : <DocumentList /> } 
                 </div>
                 <div className="paging">
                     Pagination
