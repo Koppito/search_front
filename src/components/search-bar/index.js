@@ -23,7 +23,7 @@ class SearchBar extends Component {
     search(e) {
         if ((e.keyCode === 13 && this.state.query) || e.target.id === "search-button") {
             const { history } = this.props;
-            history.replace("/search?q=" + this.state.query);
+            history.push("/search?q=" + this.state.query);
         }
     }
 

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { withRouter } from "react-router-dom";
 import "./styles/main.css";
 
 class Document extends Component {
@@ -9,6 +10,7 @@ class Document extends Component {
         this.state = {
             "document": {
                 "title": documentID,
+                "text": ""
             }
         }
     }
@@ -17,6 +19,9 @@ class Document extends Component {
         return (
             <div>
                 <div className="document-top-bar">
+                    <span className="document-back-button" onClick={this.props.history.goBack}>
+                        <span className="arrow left" />
+                    </span>
                     <h1>{this.state.document.title}</h1>
                 </div>
                 <div className="document-content">
@@ -37,4 +42,4 @@ class Document extends Component {
     }
 }
 
-export default Document;
+export default withRouter(Document);
