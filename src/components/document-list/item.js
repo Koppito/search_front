@@ -4,7 +4,8 @@ import "./styles/main.css";
 
 const Item = ({data}) => {
     return (
-        <Link to="/document" style={{textDecoration: "none", color: "black"}}>
+        // TODO: Change link
+        <Link to="/document/test" style={{textDecoration: "none", color: "black"}}>
             <div className="item">
                 <span className="colored-bar" />
                 <h1>{data}</h1>

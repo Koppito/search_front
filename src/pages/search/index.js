@@ -30,16 +30,16 @@ class Search extends Component {
     render() {    
         return (
             <div>
-                <div className="top-bar">
+                <div className="search-top-bar">
                     <Link to="/" style={{textDecoration: "none"}}>
                         <h1 style={{ marginRight: 20, color: "#CAD3C8"}}>SE</h1>
                     </Link>
                     <SearchBar query={this.state.query}/>
                 </div>
-                <div className="content">
+                <div className="search-content">
                     { this.state.loading ? <LoadingIcon /> : <DocumentList /> } 
                 </div>
-                <div className="paging">
+                <div className="search-paging">
                     Pagination
                 </div>
             </div>

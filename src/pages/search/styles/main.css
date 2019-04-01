@@ -1,4 +1,4 @@
-.top-bar {
+.search-top-bar {
   width: 100%;
   background-color: #2C3A47;
   display: -webkit-box;
@@ -17,7 +17,7 @@
   padding: 0 25px;
 }
 
-.content {
+.search-content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +31,7 @@
   margin-top: 20px;
 }
 
-.paging {
+.search-paging {
   margin-top: 25px;
   margin-bottom: 50px;
   display: -webkit-box;
