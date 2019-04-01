@@ -22,9 +22,9 @@ class Search extends Component {
 
     componentWillMount() {
         // TODO: Implement backend hit
-        setTimeout(() => {
-            this.setState({ loading: false, });
-        }, 2000);
+        this.setState({ loading: false, });
+        // setTimeout(() => {
+        // }, 2000);
     }
 
     render() {    

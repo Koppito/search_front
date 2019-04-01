@@ -1,0 +1,38 @@
+.item {
+  width: 500px;
+  height: 100px;
+  background-color: #ecf0f1;
+  margin: 15px 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 7px 0px #a1a1a1;
+          box-shadow: 0px 5px 7px 0px #a1a1a1;
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: 0.20s;
+  transition: 0.20s;
+}
+
+.item:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.item-content {
+  overflow: hidden;
+  line-height: 20px;
+  width: 500px;
+  max-height: 60px;
+  color: #95a5a6;
+}
+
+.colored-bar {
+  position: absolute;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  background-color: #FC427B;
+}
+/*# sourceMappingURL=main.css.map */

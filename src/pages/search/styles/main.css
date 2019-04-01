@@ -33,6 +33,7 @@
 
 .paging {
   margin-top: 25px;
+  margin-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

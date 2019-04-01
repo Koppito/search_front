@@ -1,13 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styles/main.css";
 
 const Item = ({data}) => {
     return (
-        <div>
-            <Link to="/document">
+        <Link to="/document" style={{textDecoration: "none", color: "black"}}>
+            <div className="item">
+                <span className="colored-bar" />
                 <h1>{data}</h1>
-            </Link>
-        </div>
+                <p className="item-content">
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                    asjdajisasdjioajoidjaoijdiojadoijaojdspioajdsfpoajsdpofijasiopdfjaoisjfipaosjfpioajspodifjasdfjpaoisjdfpoiasjdfopiajsdiofjaopij
+                </p>
+            </div>
+        </Link>
     )
 }
 
