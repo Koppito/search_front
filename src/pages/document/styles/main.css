@@ -30,8 +30,8 @@
   margin: 50px 0;
 }
 
-.document-content p {
-  width: 700px;
+.document-content pre {
+  width: 500px;
   text-align: justify;
 }
 
