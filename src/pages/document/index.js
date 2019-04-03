@@ -13,7 +13,6 @@ class Document extends Component {
         }
     }
 
-    // TODO: Implement getting document
     componentWillMount() {
         fetch("/documents/" + this.props.match.params.id, {
             headers: {
