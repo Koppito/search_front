@@ -15,7 +15,11 @@ class Document extends Component {
 
     // TODO: Implement getting document
     componentWillMount() {
-        fetch("/documents/" + this.props.match.params.id)
+        fetch("/documents/" + this.props.match.params.id, {
+            headers: {
+                "Accept-Encoding": "gzip"
+            }
+        })
             .then(response => response.json())
             .then(data => this.setState({document: data}))
             .catch(this.setState({loading: false}));
