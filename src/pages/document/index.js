@@ -14,14 +14,15 @@ class Document extends Component {
     }
 
     componentWillMount() {
-        fetch("/documents/" + this.props.match.params.id, {
+        let base = process.env.NODE_ENV == "production" ? "http://localhost:8081" : ""
+        fetch(base + "/documents/" + this.props.match.params.id, {
             headers: {
                 "Accept-Encoding": "gzip"
             }
         })
             .then(response => response.json())
             .then(data => this.setState({document: data}))
-            .catch(this.setState({loading: false}));
+            .finally(this.setState({loading: false}));
     }
 
     render() {
