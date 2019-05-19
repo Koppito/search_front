@@ -15,7 +15,7 @@ class Document extends Component {
 
     componentWillMount() {
         let base = process.env.NODE_ENV == "production" ? "http://localhost:8081" : ""
-        fetch(base + "/documents/" + this.props.match.params.id, {
+        fetch(base + "/back/documents/" + this.props.match.params.id, {
             headers: {
                 "Accept-Encoding": "gzip"
             }

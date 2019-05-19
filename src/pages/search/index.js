@@ -16,15 +16,30 @@ class Search extends Component {
         this.state = {
             "query": query,
             "results": [{}],
+            "paging": {},
             "loading": true,
         }
     }
 
     componentWillMount() {
-        // TODO: Implement backend hit
-        setTimeout(() => {
-            this.setState({ loading: false, });
-        }, 2000);
+        let base = process.env.NODE_ENV == "production" ? "http://localhost:8081" : "";
+        let endpoint = "/back/search?q=" + this.state.query.replace(/\s+/g, '-').toLowerCase();
+
+        console.log(base+endpoint);
+
+        fetch(base + endpoint)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.setState({
+                    results: data.results,
+                    paging: data.paging,
+                })
+            })
+            .finally(this.setState({ loading: false }))
+            .catch(this.setState({ loading: false }));
+        
+        console.log(this.state.results);
     }
 
     render() {    
@@ -37,7 +52,7 @@ class Search extends Component {
                     <SearchBar query={this.state.query}/>
                 </div>
                 <div className="search-content">
-                    { this.state.loading ? <LoadingIcon /> : <DocumentList /> } 
+                    { this.state.loading ? <LoadingIcon /> : <DocumentList documents={this.state.results} /> } 
                 </div>
                 <div className="search-paging">
                     Pagination
