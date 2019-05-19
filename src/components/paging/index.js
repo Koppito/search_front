@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-
+import React, {Component, Fragment} from "react";
+import "./styles/main.css";
 
 class Paging extends Component {
     constructor(props) {
@@ -26,11 +26,21 @@ class Paging extends Component {
         console.log("This paging info: ",  this.state.paging());
         console.log((this.state.currentPage * 20) > this.state.paging().total);
         return (
-            <div>
-                <button disabled={this.state.currentPage === 1} onClick={() => this.changePage(-1)}> {"<-"} </button>
-                Page: {this.state.currentPage}
-                <button disabled={this.state.currentPage * 20 > this.state.paging().total} onClick={() => this.changePage(1)}> {"->"} </button>
-            </div>
+            <Fragment>
+                <button 
+                    disabled={this.state.currentPage === 1} onClick={() => this.changePage(-1)}
+                    className="move-button-paging">
+                    <span className="arrow-pagging left-paging" />
+                </button>
+                <p>
+                    Page: {this.state.currentPage}
+                </p>
+                <button
+                    disabled={this.state.currentPage * 20 > this.state.paging().total} onClick={() => this.changePage(1)}
+                    className="move-button-paging">
+                    <span className="arrow-pagging right-paging" />
+                </button>
+            </Fragment>
         );
     }
 }

@@ -1,0 +1,30 @@
+.move-button-paging
+    height: 40px
+    width: 40px
+    border-radius: 40px
+    background-color: #ff7f50
+    transition: 0.20s
+    cursor: pointer
+    justify-content: center
+    align-items: center
+    margin: 0 25px
+
+    &:disabled
+        background-color: #95a5a6
+        pointer-events: none
+
+    &:hover 
+        transform: scale(1.05)
+        background-color: darken(#ff7f50, 7%)
+
+.arrow-pagging
+    border: solid white
+    border-width: 0 4px 4px 0
+    display: inline-block
+    padding: 3px
+
+.left-paging
+    transform: rotate(135deg)
+
+.right-paging
+    transform: rotate(-45deg)
