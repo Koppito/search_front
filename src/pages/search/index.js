@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import SearchBar from "../../components/search-bar";
 import DocumentList from "../../components/document-list";
+import Paging from "../../components/paging";
 import LoadingIcon from "../../components/loading-icon";
 import { Link } from "react-router-dom";
 import "./styles/main.css"
@@ -19,27 +20,35 @@ class Search extends Component {
             "paging": {},
             "loading": true,
         }
+
+        this.search = this.search.bind(this);
+        this.getPagingInfo = this.getPagingInfo.bind(this);
     }
 
     componentWillMount() {
-        let base = process.env.NODE_ENV == "production" ? "http://localhost:8081" : "";
-        let endpoint = "/back/search?q=" + this.state.query.replace(/\s+/g, '-').toLowerCase();
+        this.search(0);
+    }
 
-        console.log(base+endpoint);
+    search(offset) {
+        let base = process.env.NODE_ENV == "production" ? "http://localhost:8081" : "";
+        let endpoint = `/back/search?offset=${offset}&q=${this.state.query.replace(/\s+/g, '+').toLowerCase()}`;
+
+        console.log(base + endpoint);
 
         fetch(base + endpoint)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                console.log("Paging recieved ", data.paging);
                 this.setState({
                     results: data.results,
                     paging: data.paging,
                 })
             })
-            .finally(this.setState({ loading: false }))
-            .catch(this.setState({ loading: false }));
-        
-        console.log(this.state.results);
+            .finally(this.setState({ loading: false }));
+    }
+
+    getPagingInfo() {
+        return this.state.paging;
     }
 
     render() {    
@@ -52,10 +61,13 @@ class Search extends Component {
                     <SearchBar query={this.state.query}/>
                 </div>
                 <div className="search-content">
+                    <small style={{textAlign: "left", width: 500}}>
+                        Total: {this.state.paging.total}
+                    </small>
                     { this.state.loading ? <LoadingIcon /> : <DocumentList documents={this.state.results} /> } 
                 </div>
                 <div className="search-paging">
-                    Pagination
+                    {this.state.loading ? <LoadingIcon /> : <Paging searchCallback={this.search} paging={this.getPagingInfo} />} 
                 </div>
             </div>
         );
